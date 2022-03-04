@@ -289,9 +289,6 @@ void BuildingShapeLocation7() {
 	glPopMatrix();
 }
 
-
-
-
 //background
 void squareBack() {
 	glBegin(GL_QUADS);
@@ -318,9 +315,6 @@ void Cland() {
 	squareBack();
 	glPopMatrix();*/
 }
-
-
-//------------------------------ALI END---------------------------------------//
 
 ////////////////////////////////CREATE PLANE AND CLOUD SCENE 4//////////////////
 void square() {
@@ -411,7 +405,7 @@ void smallsquare() {
 	glEnd();
 }
 
-void windows1() {//baru
+void windows1() {
 	glBegin(GL_QUADS);
 	glVertex3f(0.15, 0.15, 0.0);
 	glVertex3f(-0.15, 0.15, 0.0);
@@ -420,7 +414,7 @@ void windows1() {//baru
 	glEnd();
 }
 
-void frontwindows1() {//baru
+void frontwindows1() {
 	glBegin(GL_QUADS);
 	glVertex3f(0.3, 0.15, 0.0);
 	glVertex3f(-0.3, 0.15, 0.0);
@@ -649,8 +643,8 @@ void planemove1() {
 }
 
 ///////////////////////////////////////////CREATE HUMAN//////////////////////////
-float handmove = -30;//baru
-float incre = 1.0;//baru
+float handmove = -30;
+float incre = 1.0;
 
 //hand
 void squareLeaf() {
@@ -1416,7 +1410,6 @@ void motherpart() {
 	glPushMatrix();
 	glColor3ub(245, 255, 250);
 	head();
-
 	eye();
 	headwomen();
 	glColor3ub(186, 85, 211);
@@ -1626,7 +1619,7 @@ void humanMotherst() {//baru
 	glPopMatrix();
 }
 
-//////////////////////////////////////ALI - 2////////////////////////////////////////////
+////////////////////////////////////// 2////////////////////////////////////////////
 
 void humanBoy() {
 
@@ -1649,9 +1642,6 @@ void squareTrunk() {
 	glVertex3f(1.0, -0.7, 0.0);
 	glEnd();
 }
-
-
-
 
 //rotate leaf to specify direction
 void rotateLeaf() {
@@ -2219,14 +2209,10 @@ void display() {
 	cloud();
 	glPopMatrix();
 
-
-
 	glPushMatrix();
 	glTranslated(2, -0.3, 3);
 	treesss();
 	glPopMatrix();
-
-
 
 	if (cloudmove < 5) {
 		cloudmove += 0.01;
@@ -2534,9 +2520,6 @@ void display4() {
 	glLoadIdentity();
 	gluLookAt(camangle * -0.4, 1.0, 5.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
 
-	//GLfloat dir[] = { 5.0f, 14.0f,1.0f,5.0f};
-	//glLightfv(GL_LIGHT0, GL_POSITION, dir);
-
 	//Add ambient light
 	GLfloat ambientColor[] = { 0.2f, 0.2f, 0.2f, 1.0f }; //Color (0.2, 0.2, 0.2)
 	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, ambientColor);
@@ -2667,13 +2650,11 @@ void display5() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	//	glOrtho(-5, 5, -5, 5, 0.0001, 1000.0);
 	gluPerspective(45.0, 1.0, 0.0001, 1000.0);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	//gluLookAt(0.0, 3.0, 5.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
 	gluLookAt(4.0, 2.5, 4.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
-	//gluLookAt(5.0, 5.0, 4.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
+	
 	//Add ambient light
 	GLfloat ambientColor[] = { 0.2f, 0.2f, 0.2f, 1.0f }; //Color (0.2, 0.2, 0.2)
 	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, ambientColor);
@@ -2820,8 +2801,6 @@ void display5() {
 	glVertex3f(0.27, 0.4, 0.0);
 	glEnd();
 
-
-
 	glPushMatrix();
 	glTranslated(-1, 0, 0);
 	treesss();
@@ -2844,8 +2823,6 @@ void display5() {
 		cloudmove -= 0.01;
 	}
 
-
-
 	glFlush();
 	glutSwapBuffers();
 }
@@ -2856,11 +2833,9 @@ void display6() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	//	glOrtho(-5, 5, -5, 5, 0.0001, 1000.0);
 	gluPerspective(45.0, 1.0, 0.0001, 1000.0);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	//gluLookAt(0.0, 3.0, 5.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
 	gluLookAt(5.0, 5.0, 5.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
 	//Add ambient light
 	GLfloat ambientColor[] = { 0.2f, 0.2f, 0.2f, 1.0f }; //Color (0.2, 0.2, 0.2)
@@ -2885,7 +2860,6 @@ void display6() {
 	glEnable(GL_NORMALIZE); //Automatically normalize normals
 	glShadeModel(GL_SMOOTH); //Enable smooth shading
 
-
 	glPushMatrix();
 	ground();
 	glPopMatrix();
@@ -2894,8 +2868,6 @@ void display6() {
 	glTranslated(0, 0, 0);
 	humanManst();
 	glPopMatrix();
-
-
 
 	glPushMatrix();//cloud
 	glRotated(-5, 0.0, 1.0, 0.0);
@@ -2930,14 +2902,10 @@ void display6() {
 		cloudmove += 0.01;
 	}
 
-
-
 	glFlush();
 	glutSwapBuffers();
 }
 
-
-//SCENE 7 ALI
 void display7() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glMatrixMode(GL_MODELVIEW);
@@ -2963,12 +2931,6 @@ void display7() {
 	glLoadIdentity();
 	gluPerspective(45.0, 1.0, 0.1, 1000.0);
 	cam.Set(Point3D(-2.5, 2, 9.0), Point3D(2, 4.5, -50), Vector3D(0.0, 5, 0.0));
-
-
-
-
-
-
 
 	glPushMatrix();
 	BuildingShapeLocation1();
@@ -3060,7 +3022,7 @@ void display7() {
 }
 
 
-//SCENE 8 ALI
+//SCENE 8
 void display8() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glMatrixMode(GL_MODELVIEW);
@@ -3086,12 +3048,7 @@ void display8() {
 	glLoadIdentity();
 	gluPerspective(45.0, 1.0, 0.1, 1000.0);
 	cam.Set(Point3D(4, 2, 5), Point3D(-100, 5, -60), Vector3D(0.0, 5, 0.0));
-
-
 	float xyxz_position = -50;
-
-
-
 
 	glPushMatrix();
 	treeLocation1();
@@ -3105,11 +3062,8 @@ void display8() {
 	drawRain();
 	Cland();
 	glPopMatrix();
-	humanBoy();
-
-
-
-
+	humanBoy()
+		
 	switch (action) {
 	case 1:
 		angle += inc;
@@ -3218,16 +3172,14 @@ void display9() {
 	glutSwapBuffers();
 }
 
-//SCENE 10 BLASE
+//SCENE 10 
 void display10() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	//	glOrtho(-5, 5, -5, 5, 0.0001, 1000.0);
 	gluPerspective(45.0, 1.0, 0.0001, 1000.0);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	//gluLookAt(0.0, 3.0, 5.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
 	gluLookAt(-0.5, 1.0, 7.0, 0.0, 1.5, 0.0, 0.0, 1.0, 0.0);
 	//Add ambient light
 	GLfloat ambientColor[] = { 0.2f, 0.2f, 0.2f, 1.0f }; //Color (0.2, 0.2, 0.2)
@@ -3298,11 +3250,9 @@ void display11() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	//	glOrtho(-5, 5, -5, 5, 0.0001, 1000.0);
 	gluPerspective(45.0, 1.0, 0.0001, 1000.0);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	//gluLookAt(0.0, 3.0, 5.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
 	gluLookAt(5.0, 5.0, 5.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
 	//Add ambient light
 	GLfloat ambientColor[] = { 0.2f, 0.2f, 0.2f, 1.0f }; //Color (0.2, 0.2, 0.2)
@@ -3379,11 +3329,9 @@ void display12() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	//	glOrtho(-5, 5, -5, 5, 0.0001, 1000.0);
 	gluPerspective(45.0, 1.0, 0.0001, 1000.0);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	//gluLookAt(0.0, 3.0, 5.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
 	gluLookAt(5.0, 5.0, 5.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
 	//Add ambient light
 	GLfloat ambientColor[] = { 0.2f, 0.2f, 0.2f, 1.0f }; //Color (0.2, 0.2, 0.2)
@@ -3411,8 +3359,6 @@ void display12() {
 	glPushMatrix();
 	ground();
 	glPopMatrix();
-
-
 
 	glPushMatrix();
 	glTranslated(1, 0.7, 1.4);
