@@ -53,9 +53,6 @@ float _anglex = -30;
 float xmotherpx = 1;
 float xrx_position = -6;
 
-
-
-
 float slowdown = 2.0;
 float velocity = 0.0;
 float zoom = 3.0;
