@@ -15,8 +15,8 @@
 #define FPS	30
 
 #define MAX_PARTICLES 1000
-#define WCX		640
-#define WCY		480
+#define WCX	640
+#define WCY	480
 #define RAIN	0
 
 float bjump_1 = 0, gjump_1 = 0, bdrop_1 = 0, gdrop_1 = 0;
@@ -41,25 +41,20 @@ float turnboy = 0, zboy = 0, xboy = 0;
 void MyTimerFunc(int value);//TIMER FUNCTION
 Camera cam;
 
-
-////////////////////////////////ALI///////////////////////////////
 //Background back;
 double rotx;
-
 float anglex = -30;
 float incx = 1.0;
 float xyx_position = 4;
 float _anglex = -30;
 float xmotherpx = 1;
 float xrx_position = -6;
-
 float slowdown = 2.0;
 float velocity = 0.0;
 float zoom = 3.0;
 float pan = 0.0;
 float tilt = 0.0;
 float hailsize = 0.1;
-
 int loop;
 int fall;
 
@@ -75,17 +70,21 @@ typedef struct {
 	// Life
 	bool alive;	// is the particle alive?
 	float life;	// particle lifespan
-	float fade; // decay
+	float fade; 	// decay
+	
 	// color
 	float red;
 	float green;
 	float blue;
+	
 	// Position/direction
 	float xpos;
 	float ypos;
 	float zpos;
+	
 	// Velocity/Direction, only goes down in y dir
 	float vel;
+	
 	// Gravity
 	float gravity;
 }particles;
@@ -128,7 +127,6 @@ void init() {
 			ground_points[x][z][0] = x - 15.0;
 			ground_points[x][z][1] = accum;
 			ground_points[x][z][2] = z - 15.0;
-
 			ground_colors[z][x][0] = r; // red value
 			ground_colors[z][x][1] = g; // green value
 			ground_colors[z][x][2] = b; // blue value
@@ -226,7 +224,6 @@ void BuildingShapeLocation1() {
 	glTranslated(-1.4, 0, -1);
 	glColor3ub(50, 205, 50);
 	BuildingShape();
-
 	glPopMatrix();
 }
 
@@ -236,7 +233,6 @@ void BuildingShapeLocation2() {
 	glTranslated(1, 0, -1);
 	glColor3ub(50, 205, 50);
 	BuildingShape();
-
 	glPopMatrix();
 }
 
@@ -246,7 +242,6 @@ void BuildingShapeLocation3() {
 	glTranslated(-1.5, 0, -1);
 	glColor3ub(50, 205, 50);
 	BuildingShape();
-
 	glPopMatrix();
 }
 
@@ -256,7 +251,6 @@ void BuildingShapeLocation4() {
 	glTranslated(-1.5, 0, -10);
 	glColor3ub(50, 205, 50);
 	BuildingShape();
-
 	glPopMatrix();
 }
 
@@ -275,7 +269,6 @@ void BuildingShapeLocation6() {
 	glTranslated(1, 0, -10);
 	glColor3ub(50, 205, 50);
 	BuildingShape();
-
 	glPopMatrix();
 }
 
@@ -285,7 +278,6 @@ void BuildingShapeLocation7() {
 	glTranslated(-2.3, 0, -6);
 	glColor3ub(50, 205, 50);
 	BuildingShape();
-
 	glPopMatrix();
 }
 
@@ -298,7 +290,6 @@ void squareBack() {
 	glVertex3f(-10, -6, 0.0);
 	glVertex3f(10.0, -4, 0.0);
 	glEnd();
-
 }
 
 //create land
@@ -642,7 +633,7 @@ void planemove1() {
 	glPopMatrix();
 }
 
-///////////////////////////////////////////CREATE HUMAN//////////////////////////
+/////////////////////////CREATE HUMAN//////////////////////////
 float handmove = -30;
 float incre = 1.0;
 
@@ -809,8 +800,6 @@ void head() {
 	glTranslated(2.6, 3.3, 10);
 	leaf();
 	glPopMatrix();
-
-
 }
 
 void headwomen() {
@@ -1185,7 +1174,6 @@ void motherleg(float angle1) {
 }
 
 void handR() {
-	/////baru
 	handmove += incre;
 
 	if (handmove > 30) {
@@ -1196,7 +1184,7 @@ void handR() {
 		handmove = -10;
 		incre = +1;
 	}
-	////////baru
+	
 
 	//left hand
 	glPushMatrix();
@@ -1596,6 +1584,7 @@ void humanMother() {
 	mother();
 	glPopMatrix();
 }
+
 //mother walk scene1
 void humanMother1() {
 	glPushMatrix();
@@ -1619,11 +1608,8 @@ void humanMotherst() {//baru
 	glPopMatrix();
 }
 
-////////////////////////////////////// 2////////////////////////////////////////////
-
+/////////////////////////// 2////////////////////////////////////////////
 void humanBoy() {
-
-
 	glPushMatrix();
 	glTranslated(xrx_position, 0.3, 0.5);
 	glTranslated(xbj_position, bjump, 0);
@@ -1918,8 +1904,6 @@ void tree() {
 }
 
 
-
-
 ///////////////////////CREATE TREE SCENE 3/////////////////////////////////
 void trunk() {
 	GLUquadricObj* pObj;
@@ -1981,7 +1965,6 @@ void treeLocation1() {
 	glColor3ub(50, 205, 50);
 	rotateLeaf();
 	tree();
-
 	glPopMatrix();
 }
 
@@ -1991,7 +1974,6 @@ void treeLocation2() {
 	glColor3ub(50, 205, 50);
 	rotateLeaf();
 	tree();
-
 	glPopMatrix();
 }
 
@@ -2002,7 +1984,6 @@ void treeLocation3() {
 	glColor3ub(50, 205, 50);
 	rotateLeaf();
 	tree();
-
 	glPopMatrix();
 }
 
@@ -2012,7 +1993,6 @@ void treeLocation4() {
 	glColor3ub(50, 205, 50);
 	rotateLeaf();
 	tree();
-
 	glPopMatrix();
 }
 
@@ -2023,7 +2003,6 @@ void treeLocation5() {
 	glColor3ub(50, 205, 50);
 	rotateLeaf();
 	tree();
-
 	glPopMatrix();
 }
 
@@ -2034,7 +2013,6 @@ void treeLocation6() {
 	glColor3ub(50, 205, 50);
 	rotateLeaf();
 	tree();
-
 	glPopMatrix();
 }
 
@@ -2044,7 +2022,6 @@ void treeLocation7() {
 	glColor3ub(50, 205, 50);
 	rotateLeaf();
 	tree();
-
 	glPopMatrix();
 }
 
@@ -2367,12 +2344,11 @@ void display3_1() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	//	glOrtho(-5, 5, -5, 5, 0.0001, 1000.0);
 	gluPerspective(45.0, 1.0, 0.0001, 1000.0);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	gluLookAt(0.0, 3.0, 7.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
-	//gluLookAt(5.0, 5.0, 5.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
+
 	//Add ambient light
 	GLfloat ambientColor[] = { 0.2f, 0.2f, 0.2f, 1.0f }; //Color (0.2, 0.2, 0.2)
 	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, ambientColor);
@@ -2395,7 +2371,6 @@ void display3_1() {
 	glEnable(GL_LIGHT1);
 	glEnable(GL_NORMALIZE); //Automatically normalize normals
 	glShadeModel(GL_SMOOTH); //Enable smooth shading
-
 
 	glPushMatrix();
 	glTranslated(0, bjump, 0);
@@ -2445,12 +2420,11 @@ void display3_2() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	//	glOrtho(-5, 5, -5, 5, 0.0001, 1000.0);
 	gluPerspective(45.0, 1.0, 0.0001, 1000.0);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	//gluLookAt(0.0, 3.0, 5.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
 	gluLookAt(5.0, 5.0, 5.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
+	
 	//Add ambient light
 	GLfloat ambientColor[] = { 0.2f, 0.2f, 0.2f, 1.0f }; //Color (0.2, 0.2, 0.2)
 	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, ambientColor);
@@ -2514,7 +2488,6 @@ void display4() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	//	glOrtho(-5, 5, -5, 5, 0.0001, 1000.0);
 	gluPerspective(45.0, 1.0, 0.0001, 1000.0);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
@@ -2542,7 +2515,6 @@ void display4() {
 	glEnable(GL_LIGHT1);
 	glEnable(GL_NORMALIZE); //Automatically normalize normals
 	glShadeModel(GL_SMOOTH); //Enable smooth shading
-
 
 	glPushMatrix();//cloud
 	glRotated(angle + 180.0, 0.0, 1.0, 0.0);
@@ -2679,12 +2651,10 @@ void display5() {
 	glShadeModel(GL_SMOOTH); //Enable smooth shading
 
 	glPushMatrix();
-	//girlstatic();
 	ground();
 	glPopMatrix();
 
 	/* main rec */
-	;
 	glColor3f(.5, .75, .35);
 	glBegin(GL_POLYGON);
 	glVertex3f(0.2, 0.1, 0.0);
@@ -2695,7 +2665,6 @@ void display5() {
 
 
 	/*back rec*/
-
 	glColor3f(.5, .75, .35);
 	glBegin(GL_POLYGON);
 	glVertex3f(0.2, 0.1, 0.5);
@@ -2706,7 +2675,6 @@ void display5() {
 
 
 	/* left rec */
-
 	glColor3f(.75, 0.75, .25);
 	glBegin(GL_POLYGON);
 	glVertex3f(0.2, 0.1, 0.5);
@@ -2717,7 +2685,6 @@ void display5() {
 
 
 	/* right rec */
-
 	glColor3f(.75, 0.75, .25);
 	glBegin(GL_POLYGON);
 	glVertex3f(0.9, 0.1, 0.5);
@@ -2728,7 +2695,6 @@ void display5() {
 
 
 	/* left tri */
-
 	glColor3f(.5, 0.5, .25);
 	glBegin(GL_TRIANGLES);
 	glVertex3f(0.9, 0.575, 0.0);
@@ -2738,7 +2704,6 @@ void display5() {
 
 
 	/* right tri */
-
 	glColor3f(.5, 0.5, .25);
 	glBegin(GL_TRIANGLES);
 	glVertex3f(0.2, 0.575, 0.0);
@@ -2748,7 +2713,6 @@ void display5() {
 
 
 	/* roof */
-
 	glColor3f(.55, 0.35, .2);
 	glBegin(GL_POLYGON);
 	glVertex3f(0.2, 0.575, 0.0);
@@ -2756,8 +2720,6 @@ void display5() {
 	glVertex3f(0.9, 0.8, 0.25);
 	glVertex3f(0.2, 0.8, 0.25);
 	glEnd();
-
-
 
 	glPushMatrix();
 	glColor3f(.55, 0.35, .2);
@@ -2770,7 +2732,6 @@ void display5() {
 
 
 	/* door */
-
 	glColor3f(.15, 0.2, .3);
 	glBegin(GL_POLYGON);
 	glVertex3f(0.47, 0.105, 0.0);
@@ -2781,7 +2742,6 @@ void display5() {
 
 
 	/* window 1 */
-
 	glColor3f(.3, 0.2, .1);
 	glBegin(GL_POLYGON);
 	glVertex3f(0.72, 0.25, 0.0);
@@ -2792,7 +2752,6 @@ void display5() {
 
 
 	/* window 2 */
-
 	glColor3f(.3, 0.2, .1);
 	glBegin(GL_POLYGON);
 	glVertex3f(0.27, 0.25, 0.0);
@@ -2837,6 +2796,7 @@ void display6() {
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	gluLookAt(5.0, 5.0, 5.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
+	
 	//Add ambient light
 	GLfloat ambientColor[] = { 0.2f, 0.2f, 0.2f, 1.0f }; //Color (0.2, 0.2, 0.2)
 	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, ambientColor);
@@ -2985,8 +2945,6 @@ void display7() {
 	cloud();
 	glPopMatrix();
 
-
-
 	switch (action) {
 	case 1:
 		angle += inc;
@@ -3017,8 +2975,6 @@ void display7() {
 	}
 	glFlush();
 	glutSwapBuffers();
-
-
 }
 
 
@@ -3381,9 +3337,6 @@ void display12() {
 	glTranslated(-1, 0, 0);
 	treesss();
 	glPopMatrix();
-
-
-
 	glFlush();
 	glutSwapBuffers();
 }
@@ -3426,8 +3379,6 @@ int main(int argc, char** argv) {
 	glutTimerFunc(1000, MyTimerFunc, 0);
 	initGL();
 	init();
-
-
 	glutMainLoop();
 }
 
