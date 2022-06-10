@@ -1,4 +1,4 @@
-# 3D-opengl-Childhood Love
-3d opengl scene
+# 3D-OpenGl-Childhood Love
+3d OpenGl scene
 
 School Project for Computer Graphic
