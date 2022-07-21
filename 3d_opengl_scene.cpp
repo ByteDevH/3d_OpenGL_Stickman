@@ -9,15 +9,13 @@
 #include "camera.h"
 
 #define PI 3.141592653
-
-#define SCREEN_WIDTH	700
-#define SCREEN_HEIGHT	700
-#define FPS	30
-
+#define SCREEN_WIDTH 700
+#define SCREEN_HEIGHT 700
+#define FPS 30
 #define MAX_PARTICLES 1000
-#define WCX	640
-#define WCY	480
-#define RAIN	0
+#define WCX 640
+#define WCY 480
+#define RAIN 0
 
 float bjump_1 = 0, gjump_1 = 0, bdrop_1 = 0, gdrop_1 = 0;
 float angle = -30, angle0 = -30, angle1 = -30, angle2 = -30;
@@ -754,7 +752,6 @@ void wavehand2() {
 	glRotated(180, 0, 0, 1);
 	leaf();
 	glPopMatrix();
-
 }
 
 void humanPart2() {
@@ -1185,7 +1182,6 @@ void handR() {
 		incre = +1;
 	}
 	
-
 	//left hand
 	glPushMatrix();
 	glColor3ub(36, 255, 255);
@@ -1548,8 +1544,6 @@ void humanWomen1() {
 	girl();
 	glPopMatrix();
 }
-
-
 
 void humanManst() {
 	glPushMatrix();
@@ -3050,8 +3044,6 @@ void display8() {
 	}
 	glFlush();
 	glutSwapBuffers();
-
-
 }
 
 //SCENE 9 BLASE
@@ -3340,8 +3332,6 @@ void display12() {
 	glFlush();
 	glutSwapBuffers();
 }
-
-
 
 void idle() {
 	DWORD start = GetTickCount64();
